@@ -9,6 +9,9 @@ import os
 
 GREETING = "You've reached Miso. I'm pushing your glass off the table. Leave a message after the meow — or open the tuna. Meow."
 
+# The gate allows 1 to 120 characters; refuse to emit anything outside it.
+assert 1 <= len(GREETING) <= 120, "greeting must be 1-120 characters"
+
 
 def main() -> None:
     os.makedirs("/output", exist_ok=True)
